@@ -35,7 +35,7 @@ class LoginVerification extends Notification
 
         $notifiable->update([
             'login_code' => $loginCode,
-            'login_code_expires_at' => now()->addMinutes(30), // 30-minute expiry
+            'login_code_expires_at' => now()->addMinutes(5), // 5-minute expiry
         ]);
 
         return (new TwilioSmsMessage())
